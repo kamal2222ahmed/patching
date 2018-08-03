@@ -15,12 +15,26 @@ verifier:
 platforms:
   - name: ubuntu-16.04
   - name: centos-7
+  - name: windows-server-2012r2-standard
+    driver:
+      box: chef/windows-server-2012r2-standard
 
 suites:
-  - name: default
+  - name: linux
     run_list:
       - recipe[patching::default]
     verifier:
       inspec_tests:
-        - test/integration/default
+        - name: linux_patch_scan
+          url: https://github.com/dev-sec/linux-patch-baseline/archive/master.zip
+        - name: spectre-meltdown_scan
+          url: https://github.com/vibrato/inspec-meltdownspectre/archive/master.zip
+    attributes:
+  - name: windows
+    run_list:
+      - recipe[patching::default]
+    verifier:
+      inspec_tests:
+        - name: windows_patch_scan
+          url: https://github.com/dev-sec/windows-patch-baseline/archive/master.zip
     attributes:
