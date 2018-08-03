@@ -9,6 +9,7 @@ case node['platform']
     execute 'update yum repository' do
       command 'yum check-update'
       action :run
+      returns [0, 100]
     end
     # yum_repository 'DEV Repo' do
     #   description 'DEV YUM repository'

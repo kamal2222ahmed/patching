@@ -1,1 +1,1 @@
-default['patching']['enabled'] = true
+default['patching']['enabled'] = false
