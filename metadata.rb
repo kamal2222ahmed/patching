@@ -1,6 +1,6 @@
 name 'patching'
-maintainer 'The Authors'
-maintainer_email 'you@example.com'
+maintainer 'Larry Eichenbaum'
+maintainer_email 'larryebaum@chef.io'
 license 'All Rights Reserved'
 description 'Installs/Configures patching'
 long_description 'Installs/Configures patching'
