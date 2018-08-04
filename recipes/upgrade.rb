@@ -10,5 +10,6 @@ case node['platform']
       action :run
     end
   when 'windows'
-    #include_recipe 'wsus-client::default'
+    node.default['wsus_client']['update']['action'] = [ :download, :install ]
+    include_recipe 'wsus-client::default'
 end

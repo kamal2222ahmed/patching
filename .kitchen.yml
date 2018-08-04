@@ -37,4 +37,6 @@ suites:
       inspec_tests:
         - name: windows_patch_scan
           url: https://github.com/dev-sec/windows-patch-baseline/archive/master.zip
+        - name: spectre-meltdown_scan
+          url: https://github.com/vibrato/inspec-meltdownspectre/archive/master.zip
     attributes:

@@ -22,7 +22,10 @@ case node['platform']
       action :update
     end
   when 'windows'
-    #
+    service 'wuauserv' do
+      action [ :enable, :start ]
+    end
+    include_recipe 'wsus-client::configure'
 end
 if node['patching']['enabled'] == true
   include_recipe 'patching::upgrade'
