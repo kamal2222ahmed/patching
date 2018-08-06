@@ -28,5 +28,9 @@ case node['platform']
     include_recipe 'wsus-client::configure'
 end
 if node['patching']['enabled'] == true
-  include_recipe 'patching::upgrade'
+  if node['patching']['feed'] == false
+    include_recipe 'patching::upgrade'
+  else
+    include_recipe 'patching::upgrade_feed'
+  end
 end

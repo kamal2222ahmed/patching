@@ -1,0 +1,8 @@
+{
+  "id": "prod",
+  "package": {
+    "selinux-policy-devel": "3.13.1-192.el7_5.4",
+    "rpm": "4.11.3-32.el7",
+    "python-slip-dbus": "0.4.0-4.el7"
+  }
+}

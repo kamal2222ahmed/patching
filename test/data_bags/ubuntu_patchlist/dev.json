@@ -1,0 +1,8 @@
+{
+  "id": "dev",
+  "package": {
+    "base-files": "9.4ubuntu4.7",
+    "bsdutils": "1:2.27.1-6ubuntu3.6",
+    "coreutils": "8.25-2ubuntu3~16.04"
+  }
+}
