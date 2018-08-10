@@ -18,6 +18,8 @@ platforms:
   - name: windows-server-2012r2-standard
     driver:
       box: chef/windows-server-2012r2-standard
+      synced_folders:
+        - ['../..', '/uscis', 'create: true', 'type: smb']
 
 suites:
   - name: linux
@@ -30,6 +32,9 @@ suites:
         - name: spectre-meltdown_scan
           url: https://github.com/vibrato/inspec-meltdownspectre/archive/master.zip
     attributes:
+    excludes:
+      - windows-server-2012r2-standard
+
   - name: windows
     run_list:
       - recipe[patching::default]
@@ -40,3 +45,6 @@ suites:
         - name: spectre-meltdown_scan
           url: https://github.com/vibrato/inspec-meltdownspectre/archive/master.zip
     attributes:
+    excludes:
+      - ubuntu-16.04
+      - centos-7
